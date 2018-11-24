@@ -23,7 +23,10 @@ this.set=function(data,cb){
 
 // CREATE TABLE users (
 //   id INTEGER NOT NULL AUTO_INCREMENT ,
-//   username text NOT NULL ,
-//   password text NOT NULL ,
+//   name text NOT NULL ,
+//   email text NOT NULL ,
+//   code text NOT NULL,
+//   username text NOT NULL,
+//   password text Not Null,
 //   PRIMARY KEY (id)
 // );

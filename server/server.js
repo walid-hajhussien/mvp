@@ -14,7 +14,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-
+// add bodyParser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -42,6 +42,8 @@ app.post('/',function(req,res){
 res.send('we recived your post ')
 
 })
+
+
 // to check the password and username
 // 0-->(No username) 1-->(password corect) 2-->(wrong password)
 app.post('/check',function(req,res){
@@ -77,8 +79,33 @@ dbConnection.db.query(query, function(err, result) {
 })
 
 
+// Regester the user data 1-->inserted 0-->Error
+
+app.post('/sinup',function(req,res){
+    console.log(req.body);
+  var username=req.body.username;
+  var password=req.body.password;
+  var name = req.body.name;
+  var email=req.body.email;
+  var code=req.body.code;
+  var query=`insert into users values(null,\"${name}\",\"${email}\",\"${code}\",\"${username}\",\"${password}\") `
 
 
+
+  dbConnection.db.query(query, function(err, result) {
+          if(err){
+            console.log(err);
+            res.send('0')
+          }else{
+            console.log(result);
+            res.send('1')
+          }
+    })
+
+
+
+
+})
 
 
 

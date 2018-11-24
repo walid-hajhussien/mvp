@@ -31,7 +31,7 @@ mainApp.run(function() {
 
 
 // the main controller
-mainApp.controller('c1mainApp', function($scope,getData,sinUp,check) {
+mainApp.controller('c1mainApp', function($scope,getData,sinup,check) {
   // remove
   $scope.remove = function(obj) {
     $scope.array.splice($scope.array.indexOf(obj), 1)
@@ -61,12 +61,6 @@ mainApp.controller('c1mainApp', function($scope,getData,sinUp,check) {
 // login
   $scope.login=function(user){
     var obj={username:user.username,password:user.password}
-    // if(obj.username=='ozil' && obj.password=='123'){
-    //   $scope.acsess=true
-    //   $scope.wrongPassword=false;
-    // }else{
-    //   $scope.wrongPassword=true;
-    // }
     check.set(obj,function(data){
       if(data.data==0 || data.data==2){
         $scope.wrongPassword=true;
@@ -76,9 +70,35 @@ mainApp.controller('c1mainApp', function($scope,getData,sinUp,check) {
       }
       console.log('data',data.data);
     })
-  //  $scope.check(obj);
 
   }
+
+//SignUp
+$scope.signup=function(data){
+  var obj={
+    name:data.name,
+    email:data.email,
+    code:data.code,
+    username:data.username,
+    password:data.password
+  }
+  //clean the page
+  data.code="";
+  data.email="";
+  data.name="";
+  data.username="";
+  data.password="";
+  // send it to the server
+  sinup.set(obj,function(data){
+      if(data.data==1){
+        $scope.acsess=true
+      }else{
+        console.log('Error data not inserted');
+      }
+  })
+  //console.log(obj);
+}
+
 // change the style after login to the main page
   $scope.go=function(){
     $("body").attr('class', 'body2');
