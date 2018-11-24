@@ -1,0 +1,21 @@
+{
+  "name": "main-angular",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server",
+    "server": "nodemon server/server.js"
+  },
+  "author": "ozil",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.7.5",
+    "angular-route": "^1.7.5",
+    "body-parse": "^0.1.0",
+    "express": "^4.16.4",
+    "jquery": "^3.3.1",
+    "mysql": "^2.16.0"
+  }
+}

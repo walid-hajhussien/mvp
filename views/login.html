@@ -1,0 +1,12 @@
+<div class="loginDive" ng-show="!acsess">
+  <form ng-submit="login(user)" class="loginForm">
+    <input type="text" placeholder="user name please.." ng-model="user.username">
+    <input type="password" placeholder="password...." ng-model="user.password">
+    <input type="submit" name="Enter">
+  </form>
+  <h5 style="color:red" ng-show="wrongPassword">ERROR : Wrong Username or Password</h5>
+</div>
+<a href="#"><button id="b2" type="button" name="button" ng-show="!acsess">SignUp</button></a>
+
+<a href="#!/enter" ng-show="acsess"><button ng-click="go()" id="b1" type="button" name="Go..">Go..</button></a>
+<!-- ng-class="className" -->

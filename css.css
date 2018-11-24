@@ -1,0 +1,90 @@
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.loginDive {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin-left: 400px;
+  margin-right: 400px;
+  margin-top: 200px;
+}
+
+#b1 {
+  width: 400px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-left: 600px;
+  margin-top: 400px;
+}
+
+#b2 {
+  width: 100px;
+  background-color: brown;
+  padding: 14px 20px;
+  border-radius: 10px;
+  margin-left: 750px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+#b2:hover {
+  background-color: chocolate;
+}
+
+.ulheader li {
+  padding-left: 10px;
+  color: burlywood;
+  display: inline-block;
+}
+
+nav {
+  background-color: black;
+}
+
+.body1 {
+  background-image: url("image/school.jpg");
+  background-size: cover;
+}
+
+.body2 {
+  background-color: aquamarine;
+}

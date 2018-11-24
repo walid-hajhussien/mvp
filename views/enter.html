@@ -1,0 +1,23 @@
+<ng-include src="'header.html'"></ng-include>
+<button type="button" name="button" ng-click="order='name'">order by name</button>
+<button type="button" name="button" ng-click="order='age'">order by age</button>
+<button type="button" name="button" ng-click="render()">Retrive</button>
+
+<input type="text" ng-model="name1" placeholder="Enter your name">
+<ul>
+  <li ng-init="a='red'" style="color:{{a}}" ng-click="a='blue'" ng-repeat="obj in array | orderBy:order | filter : name1 ">
+    <img ng-src="{{obj.image}}" style="margin : -12px 10px 0 0;width:50px" ng-show="obj.image" />
+    {{obj.name}}-{{obj.age | currency}} <span style="background:{{obj.color}}">{{obj.color}}</span>
+    <b ng-click="remove(obj)">X</b>
+
+
+  </li>
+</ul>
+
+<form ng-submit="add(data)">
+  <input type="text" placeholder="name" ng-model="data.name">
+  <input type="text" placeholder="age" ng-model="data.age">
+  <input type="text" placeholder="color" ng-model="data.color">
+  <input type="file" id="file" name="file" ng-model="data.file" />
+  <input type="submit" name="Submit">
+</form>
