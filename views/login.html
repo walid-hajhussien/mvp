@@ -1,8 +1,8 @@
 <div class="loginDive" ng-show="!acsess">
   <form ng-submit="login(user)" class="loginForm">
-    <input type="text" placeholder="user name please.." ng-model="user.username">
+    <input class="inputtext" type="text" placeholder="user name please.." ng-model="user.username">
     <input type="password" placeholder="password...." ng-model="user.password">
-    <input type="submit" name="Enter">
+    <input class="submit" type="submit" name="Enter">
   </form>
   <h5 style="color:red" ng-show="wrongPassword">ERROR : Wrong Username or Password</h5>
 </div>

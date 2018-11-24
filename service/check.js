@@ -30,3 +30,14 @@ this.set=function(data,cb){
 //   password text Not Null,
 //   PRIMARY KEY (id)
 // );
+
+
+// CREATE TABLE IF NOT EXISTS data (
+//   id INTEGER NOT NULL AUTO_INCREMENT ,
+//   firstname text NOT NULL ,
+//   lastname text NOT NULL ,
+//   age text NOT NULL ,
+//   class text NOT NULL,
+//   color text NOT NULL,
+//   PRIMARY KEY (id)
+// );

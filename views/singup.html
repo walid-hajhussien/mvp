@@ -1,11 +1,11 @@
 <div class="loginDive" ng-show="!acsess">
   <form ng-submit="signup(data)" class="loginForm">
-    <input type="text" placeholder="your name please.." ng-model="data.name">
+    <input class="inputtext" type="text" placeholder="your name please.." ng-model="data.name">
     <input type="email" placeholder="your Email please.." ng-model="data.email">
-    <input type="text" placeholder="your employee code please.." ng-model="data.code">
-    <input type="text" placeholder="user name please.." ng-model="data.username">
+    <input class="inputtext" type="text" placeholder="your employee code please.." ng-model="data.code">
+    <input class="inputtext" type="text" placeholder="user name please.." ng-model="data.username">
     <input type="password" placeholder="password...." ng-model="data.password">
-    <input type="submit" name="Regester" value="Regester">
+    <input class="submit" type="submit" name="Regester" value="Regester">
   </form>
 </div>
 <a href="#!/enter" ng-show="acsess"><button ng-click="go()" id="b1" type="button" name="Go..">Go..</button></a>

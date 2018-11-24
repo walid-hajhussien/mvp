@@ -19,6 +19,24 @@ dbConnection.connect(function(err) {
   }
 });
 
+var query1=`
+CREATE TABLE IF NOT EXISTS data (
+  id INTEGER NOT NULL AUTO_INCREMENT ,
+  firstname text NOT NULL ,
+  lastname text NOT NULL ,
+  age text NOT NULL ,
+  class text NOT NULL,
+  color text NOT NULL,
+  PRIMARY KEY (id)
+);`
+
+
+
+dbConnection.query(query1, function(err, result){
+  if(result){
+    console.log('table data has been created');
+  }
+})
 
 
 module.exports.db = dbConnection;

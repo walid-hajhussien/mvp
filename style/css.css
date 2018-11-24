@@ -1,4 +1,15 @@
-input[type=text] {
+td {
+  padding-left: 20px;
+  padding-top: 20px;
+  text-align: center;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 1px;
+}
+
+.inputtext {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -28,7 +39,7 @@ input[type=email] {
   box-sizing: border-box;
 }
 
-input[type=submit] {
+.submit {
   width: 100%;
   background-color: #4CAF50;
   color: white;
@@ -123,26 +134,80 @@ input[type=submit]:hover {
 
 /*End Header*/
 /*Search bar*/
-#id {
-  padding: 10px;
-  font-size: 17px;
-  border: 1px solid grey;
-  float: left;
-  width: 80%;
-  background: #f1f1f1;
-  width: 10px;
+.btn-search {
+  background: #424242;
+  border-radius: 0;
+  color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #1c1c1c;
 }
 
-.bserach {
-  float: left;
-  width: 20%;
-  padding: 10px;
-  background: #2196F3;
-  color: white;
-  font-size: 17px;
-  border: 1px solid grey;
-  border-left: none;
-  cursor: pointer;
+.btn-search:link, .btn-search:visited {
+  color: #fff;
+}
+
+.btn-search:active, .btn-search:hover {
+  background: #1c1c1c;
+  color: #fff;
 }
 
 /*End Search bar*/
+/*order button*/
+.order {
+  margin-left: 700px
+}
+
+#order1 {
+  width: 100px
+}
+
+#order2 {
+  width: 100px
+}
+
+#order3 {
+  width: 100px
+}
+
+/*end order button*/
+.view {
+  width: 250px
+}
+
+.button {
+  margin-left: 20px
+}
+
+.view2 {
+  margin-left: 90px;
+}
+
+.view3 {
+  cursor: pointer;
+}
+
+.add {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin-left: 550px;
+  margin-right: 400px;
+  margin-top: 200px;
+}
+
+#p6 {
+  border-style: solid;
+  border-radius: 5px;
+}
+
+.b5 {
+  padding-right: 0px;
+}
+
+.addbutton {
+  margin-top: 20px;
+  margin-left: 800px;
+  width: 100px;
+  margin-bottom: -200px;
+}

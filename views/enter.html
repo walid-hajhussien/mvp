@@ -1,23 +1,59 @@
 <ng-include src="'header.html'"></ng-include>
-<button type="button" name="button" ng-click="order='name'">order by name</button>
-<button type="button" name="button" ng-click="order='age'">order by age</button>
-<button type="button" name="button" ng-click="render()">Retrive</button>
 
-<input type="text" ng-model="name1" placeholder="Enter your name">
-<ul>
-  <li ng-init="a='red'" style="color:{{a}}" ng-click="a='blue'" ng-repeat="obj in array | orderBy:order | filter : name1 ">
-    <img ng-src="{{obj.image}}" style="margin : -12px 10px 0 0;width:50px" ng-show="obj.image" />
-    {{obj.name}}-{{obj.age | currency}} <span style="background:{{obj.color}}">{{obj.color}}</span>
-    <b ng-click="remove(obj)">X</b>
+<div class="container">
+  <div class="input-group">
+    <input type="text" ng-model="name1" class="form-control" placeholder="Search for...">
+    <span class="input-group-btn">
+      <button class="btn btn-search" type="button"><i class="fa fa-search fa-fw"></i> Search</button>
+    </span>
+  </div>
+</div><br><br>
+
+<div class="order">
+  <button id="order1" class="btn btn-primary btn-lg" type="button" name="button" ng-click="orderName()">Name</button>
+  <button id="order2" class="btn btn-secondary btn-lg" type="button" name="button" ng-click="orderAge()">Age</button>
+  <button id="order3" class="btn btn-dark btn-lg" type="button" name="button" ng-click="render()">All</button>
+</div>
+
+<br><br>
+
+<div class="button">
+  <table>
+    <tr>
+      <th><button class="view btn btn-outline-success" type="button" name="button">Photo</button></th>
+      <th><button class="view btn btn-outline-success" type="button" name="button">FirstName</button></th>
+      <th><button class="view btn btn-outline-success" type="button" name="button">LastName</button></th>
+      <th><button class="view btn btn-outline-success" type="button" name="button">Age</button></th>
+      <th><button class="view btn btn-outline-success" type="button" name="button">Class</button></th>
+      <th><button class="view btn btn-outline-success" type="button" name="button">Color</button></th>
+      <th><button class="view3 btn btn-outline-danger" type="button" name="button">x</button></th>
+    </tr>
+
+</div>
 
 
-  </li>
-</ul>
+<tr class="view2" ng-init="a='red'" style="color:{{a}}" ng-click="a='blue'" ng-repeat="obj in array | orderBy:sort | filter : name1 ">
 
-<form ng-submit="add(data)">
-  <input type="text" placeholder="name" ng-model="data.name">
-  <input type="text" placeholder="age" ng-model="data.age">
-  <input type="text" placeholder="color" ng-model="data.color">
-  <input type="file" id="file" name="file" ng-model="data.file" />
-  <input type="submit" name="Submit">
-</form>
+  <td><img ng-src="image/icon.jpg" style="margin : -12px 10px 0 0;width:50px" /></td>
+  <td><span id="p2">{{obj.firstname}} </span></td>
+  <td><span id="p3">{{obj.lastname}} </span></td>
+  <td><span id="p4">{{obj.age}}</span></td>
+  <td><span id="p5">{{obj.class}}</span></td>
+  <td><span id="p6" style="background:{{obj.color}};color:white">color</span></td>
+  <td><b ng-click="remove(obj)"><button class=" btn btn-danger" type="button" name="button">x</button></b></td>
+
+</tr>
+</table>
+
+
+<button class="addbutton btn btn-info" type="button" name="button" ng-click="traggle()">{{buttonName}}</button>
+<div class="add" ng-show="pool">
+  <form ng-submit="add(data)">
+    <input class="inputtext" type="text" placeholder="firstname" ng-model="data.firstname">
+    <input class="inputtext" type="text" placeholder="lastname" ng-model="data.lastname">
+    <input class="inputtext" type="text" placeholder="Age" ng-model="data.age">
+    <input class="inputtext" type="text" placeholder="Class" ng-model="data.class">
+    <input class="inputtext" type="text" placeholder="color" ng-model="data.color">
+    <input class="submit" class="submit" type="submit" name="Submit" value="Add">
+  </form>
+</div>

@@ -20,8 +20,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // rout
 app.get('/',function(req,res){
-
-
 var query = `select * from users`
 dbConnection.db.query(query, function(err, result) {
   if (err) {
@@ -36,7 +34,7 @@ dbConnection.db.query(query, function(err, result) {
 
 })
 
-app.post('/',function(req,res){
+app.post('/addData',function(req,res){
   //var query=`insert into table `
   console.log(req.body);
 res.send('we recived your post ')

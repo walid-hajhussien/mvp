@@ -31,26 +31,65 @@ mainApp.run(function() {
 
 
 // the main controller
-mainApp.controller('c1mainApp', function($scope,getData,sinup,check) {
+mainApp.controller('c1mainApp', function($scope,getData,sinup,check,addData) {
   // remove
   $scope.remove = function(obj) {
     $scope.array.splice($scope.array.indexOf(obj), 1)
   }
-  //add
+  //add student
   $scope.add = function(obj) {
-    $scope.array.push({
-      name: obj.name,
+    var data={
+      firstname: obj.firstname,
+      lastname:obj.lastname,
       age: obj.age,
+      class:obj.class,
       color: obj.color
-    });
-    $scope.data.name = "";
-    $scope.data.age = "";
+    }
+    console.log(data);
+    $scope.array.push(data);
+    addData.set(data,function(result){
+      console.log(result);
+    })
+    $scope.data.firstname = "";
+    $scope.data.lastname = "";
     $scope.data.color = "";
+    $scope.data.class = "";
+    $scope.data.age = "";
   }
   //variable
   $scope.acsess=false;
   $scope.className='body1'
   $scope.wrongPassword=false;
+  $scope.pool=false;
+  $scope.traggle=function(){
+      $scope.pool=!$scope.pool
+      if($scope.buttonName=='Add'){
+        $scope.buttonName='Hide'
+      }else{
+        $scope.buttonName='Add'
+      }
+  }
+  $scope.buttonName='Add';
+  //sort by Age
+  $scope.orderAge=function(){
+    console.log(  $scope.array);
+      $scope.array.sort(function(a,b){
+        return a.age-b.age
+      })
+  }
+  //sort by name
+  $scope.orderName=function(){
+    $scope.array.sort(function(a, b){
+        var nameA=a.firstname.toLowerCase(), nameB=b.firstname.toLowerCase()
+        if (nameA < nameB) //sort string ascending
+            return -1
+        if (nameA > nameB)
+            return 1
+        return 0 //default return value (no sorting)
+    })
+  }
+
+
   //to send the data to the server
   $scope.check=function(obj){
     sinUp.set(obj,function(data){
@@ -113,20 +152,26 @@ $scope.signup=function(data){
 
 
   $scope.array = [{
-    name: 'walid',
-    age: 27,
+    firstname: 'walid',
+    lastname: 'abed',
+    age: 18,
+    class:'A',
     color: 'green',
-    image:"image/1.png"
+    image:"image/icon.jpg"
   }, {
-    name: 'ahmed',
-    age: 26,
-    color: 'blue',
-    image:"image/2.png"
+    firstname: 'ozil',
+    lastname: 'abed',
+    age: 35,
+    class:'A',
+    color: 'red',
+    image:"image/icon.jpg"
   }, {
-    name: 'ayoub',
-    age: 25,
-    color: 'red'
-
+    firstname: 'ahmed',
+    lastname: 'abed',
+    age: 30,
+    class:'A',
+    color: 'black',
+    image:"image/icon.jpg"
   }]
 
 
