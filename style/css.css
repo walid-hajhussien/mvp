@@ -97,7 +97,9 @@ input[type=submit]:hover {
 }
 
 .body2 {
-  background-color: white;
+  /* background-image: url("../image/img4.jpg");
+  background-size: cover; */
+  background-color: aliceblue
 }
 
 /*Header*/
@@ -210,4 +212,8 @@ input[type=submit]:hover {
   margin-left: 800px;
   width: 100px;
   margin-bottom: -200px;
+}
+
+#logout {
+  padding-left: 1000px;
 }

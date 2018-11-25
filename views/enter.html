@@ -1,4 +1,10 @@
-<ng-include src="'header.html'"></ng-include>
+<ul id="ul2">
+  <li class="li2"><a class="active" href="#!/enter">Home</a></li>
+  <li class="li2"><a href="">News</a></li>
+  <li class="li2"><a href="">Contact</a></li>
+  <li class="li2"><a href="#!/home">About</a></li>
+  <li id="logout" class="li2" ng-click="go2()"><a href="#!/login">logout</a></li>
+</ul>
 
 <div class="container">
   <div class="input-group">
@@ -32,7 +38,7 @@
 </div>
 
 
-<tr class="view2" ng-init="a='red'" style="color:{{a}}" ng-click="a='blue'" ng-repeat="obj in array | orderBy:sort | filter : name1 ">
+<tr class="view2" ng-init="a='black'" style="color:{{a}}" ng-click="a=='blue'?a='black':a='blue'" ng-repeat="obj in array | orderBy:sort | filter : name1 ">
 
   <td><img ng-src="image/icon.jpg" style="margin : -12px 10px 0 0;width:50px" /></td>
   <td><span id="p2">{{obj.firstname}} </span></td>

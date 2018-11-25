@@ -32,6 +32,8 @@ CREATE TABLE IF NOT EXISTS data (
 
 
 
+
+
 dbConnection.query(query1, function(err, result){
   if(result){
     console.log('table data has been created');

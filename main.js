@@ -42,13 +42,19 @@ mainApp.controller('c1mainApp', function($scope,getData,sinup,check,addData) {
       firstname: obj.firstname,
       lastname:obj.lastname,
       age: obj.age,
-      class:obj.class,
+      Class:obj.class,
       color: obj.color
     }
     console.log(data);
     $scope.array.push(data);
     addData.set(data,function(result){
-      console.log(result);
+      if(result){
+        if(result.data==1){
+          console.log('the data has been inserted');
+        }else{
+          console.log('the data not inserted');
+        }
+      }
     })
     $scope.data.firstname = "";
     $scope.data.lastname = "";
@@ -142,37 +148,20 @@ $scope.signup=function(data){
   $scope.go=function(){
     $("body").attr('class', 'body2');
   }
+  $scope.go2=function(){
+    $("body").attr('class', 'body1');
+  }
 
   // to get the data from server and render it
   $scope.render=function(){
   getData.set(function(data){
+    $scope.array=data.data;
     console.log(data);
   })
   }
 
 
-  $scope.array = [{
-    firstname: 'walid',
-    lastname: 'abed',
-    age: 18,
-    class:'A',
-    color: 'green',
-    image:"image/icon.jpg"
-  }, {
-    firstname: 'ozil',
-    lastname: 'abed',
-    age: 35,
-    class:'A',
-    color: 'red',
-    image:"image/icon.jpg"
-  }, {
-    firstname: 'ahmed',
-    lastname: 'abed',
-    age: 30,
-    class:'A',
-    color: 'black',
-    image:"image/icon.jpg"
-  }]
+  $scope.array = []
 
 
 

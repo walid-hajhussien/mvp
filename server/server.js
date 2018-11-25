@@ -19,11 +19,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // rout
-app.get('/',function(req,res){
-var query = `select * from users`
+app.get('/data',function(req,res){
+var query = `select * from data`
 dbConnection.db.query(query, function(err, result) {
   if (err) {
-
+      res.send('no data')
   } else if (result) {
     console.log(result);
     res.send(result)
@@ -33,11 +33,26 @@ dbConnection.db.query(query, function(err, result) {
 })
 
 })
-
+// to add student information to the server
 app.post('/addData',function(req,res){
-  //var query=`insert into table `
-  console.log(req.body);
-res.send('we recived your post ')
+console.log(req.body);
+  var firstname=req.body.firstname;
+  var lastname=req.body.lastname;
+  var age=req.body.age;
+  var Class=req.body.Class;
+  var color=req.body.color;
+
+  console.log(firstname,lastname,age,Class,color);
+  var query=`insert into data values(null,\"${firstname}\",\"${lastname}\",\"${age}\",\"${Class}\",\"${color}\") `
+  dbConnection.db.query(query, function(err, result) {
+          if(err){
+            console.log(err);
+            res.send('0')
+          }else{
+            console.log(result);
+            res.send('1')
+          }
+    })
 
 })
 
@@ -70,10 +85,6 @@ dbConnection.db.query(query, function(err, result) {
     }
   })
 
-
-
-  // console.log(req.body.username,req.body.password);
-  // res.send('confirmed')
 })
 
 
