@@ -14,6 +14,13 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.use(express.static(__dirname + '/../'));
+app.use(express.static(__dirname + '/../node_modules'));
+app.use(express.static(__dirname + '/../views'));
+
+
+console.log(__dirname);
+
 // add bodyParser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
