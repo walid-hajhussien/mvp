@@ -79,7 +79,7 @@ input[type=submit]:hover {
 
 #b2 {
   width: 100px;
-  background-color: brown;
+  background-color: cornflowerblue;
   padding: 14px 20px;
   border-radius: 10px;
   margin-left: 750px;
@@ -88,7 +88,7 @@ input[type=submit]:hover {
 }
 
 #b2:hover {
-  background-color: chocolate;
+  background-color: blue;
 }
 
 .body1 {

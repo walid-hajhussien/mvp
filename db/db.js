@@ -29,16 +29,31 @@ CREATE TABLE IF NOT EXISTS data (
   color text NOT NULL,
   PRIMARY KEY (id)
 );`
-
-
-
-
-
 dbConnection.query(query1, function(err, result){
   if(result){
     console.log('table data has been created');
   }
 })
+
+var query2=`CREATE TABLE IF NOT EXISTS users (
+  id INTEGER NOT NULL AUTO_INCREMENT ,
+  name text NOT NULL ,
+  email text NOT NULL ,
+  code text NOT NULL,
+  username text NOT NULL,
+  password text Not Null,
+  PRIMARY KEY (id)
+);`
+dbConnection.query(query2, function(err, result){
+  if(result){
+    console.log('table users has been created');
+  }
+})
+
+
+
+
+
 
 
 module.exports.db = dbConnection;

@@ -44,8 +44,8 @@
   <td><span id="p2">{{obj.firstname}} </span></td>
   <td><span id="p3">{{obj.lastname}} </span></td>
   <td><span id="p4">{{obj.age}}</span></td>
-  <td><span id="p5">{{obj.class}}</span></td>
-  <td><span id="p6" style="background:{{obj.color}};color:white">color</span></td>
+  <td><span id="p5">{{obj.class || obj.Class}}</span></td>
+  <td><span id="p6" style="background:{{obj.color}};color:black">color</span></td>
   <td><b ng-click="remove(obj)"><button class=" btn btn-danger" type="button" name="button">x</button></b></td>
 
 </tr>
