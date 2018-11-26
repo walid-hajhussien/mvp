@@ -14,7 +14,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-// the below code to connect
+// the below code to connect 
 app.use(express.static(__dirname + '/../'));
 app.use(express.static(__dirname + '/../node_modules'));
 app.use(express.static(__dirname + '/../views'));
@@ -132,5 +132,5 @@ app.post('/sinup',function(req,res){
 
 var ip='127.0.0.1'
 var port=5000
-app.listen(prosess.env.PORT|| ports,ip);
+app.listen(port,ip);
 console.log('listen to ip :'+ip +' and port :'+port);
