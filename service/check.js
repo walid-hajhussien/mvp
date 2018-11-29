@@ -3,7 +3,8 @@ this.set=function(data,cb){
 
   $http({
     method: 'POST',
-    url: 'http://127.0.0.1:5000/check',
+    // url: 'http://127.0.0.1:5000/check',
+    url: 'https://peaceful-journey-59874.herokuapp.com/check',
     contentType: "application/json",
     data: JSON.stringify(data)
   }).then(function successCallback(response) {
