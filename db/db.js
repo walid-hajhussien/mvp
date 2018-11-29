@@ -3,12 +3,12 @@ var mysql = require('mysql');
 // setup the connection
 
 var dbConnection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
+  host: "us-cdbr-iron-east-01.cleardb.net",
+  user: "ba8ca36afca931",
   // password: "password",
-  password: '19919901',
+  password: '2e7cb6ba',
   insecureAuth: true,
-  database: 'chat'
+  database: 'heroku_2de4345a1bfca38'
 });
 // make the conection
 dbConnection.connect(function(err) {
