@@ -131,6 +131,6 @@ app.post('/sinup',function(req,res){
 
 
 var ip='127.0.0.1'
-var port=5000
+var port=process.env.PORT||5000
 app.listen(port,ip);
 console.log('listen to ip :'+ip +' and port :'+port);
